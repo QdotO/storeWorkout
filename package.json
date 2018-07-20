@@ -1,0 +1,22 @@
+{
+  "name": "store_workout",
+  "version": "1.0.0",
+  "description": "Stores a workout in a DynamoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QdotO/storeWorkout.git"
+  },
+  "keywords": [
+    "WorkoutTracker"
+  ],
+  "author": "Quincy Obeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QdotO/storeWorkout/issues"
+  },
+  "homepage": "https://github.com/QdotO/storeWorkout#readme"
+}
