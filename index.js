@@ -1,4 +1,4 @@
-const storeWorkout = require('storeWorkout.js');
+const storeWorkout = require('./storeWorkout.js');
 
 exports.handler = (event, context, callback) => {
     storeWorkout(event).then(response => {

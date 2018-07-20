@@ -2,7 +2,7 @@
 const WORKOUT_TABLE_NAME = process.env.WORKOUT_TABLE_NAME || "workouts";
 const dateTime = require('date-and-time');
 var AWS = require("aws-sdk");
-AWS.config.update({ region: "us-west-2" });
+AWS.config.update({ region: "us-east-2" });
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 module.exports = (request) => {
@@ -11,14 +11,16 @@ module.exports = (request) => {
 		var params = {
 			TableName: WORKOUT_TABLE_NAME,
 			Item: {
-				UserId: request.userId
-				Date: nowDate,
-				Type: request.workout.type,
-				Subtype: request.workout.subType,
-				Rest: request.workout.rest,
-				Exercise: request.workout.exercises
+				userId: request.userId,
+				date: nowDate,
+				type: request.workout.type,
+				subtype: request.workout.subType,
+				rest: request.workout.rest,
+				exercise: request.workout.exercises
 			}
-		}
+		};
+
+		console.log("Storing in DB: ", params);
 		docClient.put(params, function(err, data){
 			if(err){
 				return reject(err);
@@ -30,7 +32,10 @@ module.exports = (request) => {
 		});
 	}).catch(error => {
 		console.log("putInDb error: ", error);
-		return Promise.reject(error);
+		return Promise.reject({
+			errorType: "putInDb error",
+			errorData: error
+		});
 	});
 };
 
