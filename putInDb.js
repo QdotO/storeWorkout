@@ -1,16 +1,18 @@
 // putInDb.js
 const WORKOUT_TABLE_NAME = process.env.WORKOUT_TABLE_NAME || "workouts";
+const dateTime = require('date-and-time');
 var AWS = require("aws-sdk");
 AWS.config.update({ region: "us-west-2" });
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 module.exports = (request) => {
 	return new Promise((resolve, reject) =>{
+		var nowDate = dateTime.format(new Date(), 'ddd MMM DD YYYY');
 		var params = {
 			TableName: WORKOUT_TABLE_NAME,
 			Item: {
 				UserId: request.userId
-				// Date: 
+				Date: nowDate,
 				Type: request.workout.type,
 				Subtype: request.workout.subType,
 				Rest: request.workout.rest,

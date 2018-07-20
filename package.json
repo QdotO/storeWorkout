@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/QdotO/storeWorkout/issues"
   },
-  "homepage": "https://github.com/QdotO/storeWorkout#readme"
+  "homepage": "https://github.com/QdotO/storeWorkout#readme",
+  "dependencies": {
+    "aws-sdk": "^2.278.1",
+    "date-and-time": "^0.6.2"
+  }
 }
