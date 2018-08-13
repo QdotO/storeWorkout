@@ -6,6 +6,6 @@ exports.handler = (event, context, callback) => {
     	callback(null, response);
     }).catch(error => {
     	console.log("storeWorkout error: ", error);
-    	callback(error);
+    	callback(JSON.stringify(error, null, 2));
     });  
 };

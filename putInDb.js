@@ -20,13 +20,13 @@ module.exports = (request) => {
 			}
 		};
 
-		console.log("Storing in DB: ", params);
+		console.log("Storing in DB: " +  JSON.stringify(params, null, 2));
 		docClient.put(params, function(err, data){
 			if(err){
 				return reject(err);
 			}
 			else{
-				console.log("Added workout to ${WORKOUT_TABLE_NAME} table: " + JSON.stringify(data, null, 2));
+				console.log(`Added workout to ${WORKOUT_TABLE_NAME} table: ` + JSON.stringify(data, null, 2));
 				return resolve(request.workout);
 			}
 		});

@@ -4,8 +4,8 @@ module.exports = (request) => {
 	return new Promise((resolve, reject) => {
 		if(typeof request.workout == 'undefined'){
 			return reject("workout is undefined");
-		}else {
-			console.log("Request checks out...");
+		} else {
+			console.log("Request checks out..." + JSON.stringify(request, null, 2));
 			return resolve(request);
 		}
 	}).catch(error => {
