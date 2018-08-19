@@ -15,6 +15,7 @@ module.exports = (request) => {
 			Item: {
 				uuid: uuid,
 				timestamp: nowDate,
+				userId: request.userId,
 				type: request.workout.type,
 				subtype: request.workout.subType,
 				rest: request.workout.rest,
