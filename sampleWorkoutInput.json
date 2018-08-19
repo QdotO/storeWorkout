@@ -1,0 +1,35 @@
+{
+  "userId": "me",
+  "workout": {
+    "type": "Weight Lifting",
+    "subtype": "Full Body",
+    "rest": 60,
+    "exercises": [
+      {
+        "name": "Leg Press",
+        "reps": 15,
+        "sets": 4
+      },
+      {
+        "name": "Seated Row",
+        "reps": 15,
+        "sets": 4
+      },
+      {
+        "name": "Incline DB Bench",
+        "reps": 15,
+        "sets": 4
+      },
+      {
+        "name": "Side Lateral Raise",
+        "reps": 15,
+        "sets": 4
+      },
+      {
+        "name": "Incline DB Curls",
+        "reps": 15,
+        "sets": 4
+      }
+    ]
+  }
+}

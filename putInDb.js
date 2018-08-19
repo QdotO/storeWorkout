@@ -2,17 +2,19 @@
 const WORKOUT_TABLE_NAME = process.env.WORKOUT_TABLE_NAME || "workouts";
 const dateTime = require('date-and-time');
 var AWS = require("aws-sdk");
+const UUID = require('uuid/v4');
 AWS.config.update({ region: "us-east-2" });
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 module.exports = (request) => {
 	return new Promise((resolve, reject) =>{
 		var nowDate = dateTime.format(new Date(), 'ddd MMM DD YYYY');
+		var uuid = UUID();
 		var params = {
 			TableName: WORKOUT_TABLE_NAME,
 			Item: {
-				userId: request.userId,
-				date: nowDate,
+				uuid: uuid,
+				timestamp: nowDate,
 				type: request.workout.type,
 				subtype: request.workout.subType,
 				rest: request.workout.rest,

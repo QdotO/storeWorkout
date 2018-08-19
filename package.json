@@ -21,6 +21,7 @@
   "homepage": "https://github.com/QdotO/storeWorkout#readme",
   "dependencies": {
     "aws-sdk": "^2.278.1",
-    "date-and-time": "^0.6.2"
+    "date-and-time": "^0.6.2",
+    "uuid": "^3.3.2"
   }
 }
