@@ -5,6 +5,7 @@ var AWS = require("aws-sdk");
 const UUID = require('uuid/v4');
 AWS.config.update({ region: "us-east-2" });
 const docClient = new AWS.DynamoDB.DocumentClient();
+const PRIMARY_KEY = "static_uuid";
 
 module.exports = (request) => {
 	return new Promise((resolve, reject) =>{
@@ -13,7 +14,7 @@ module.exports = (request) => {
 		var params = {
 			TableName: WORKOUT_TABLE_NAME,
 			Item: {
-				uuid: uuid,
+				uuid: PRIMARY_KEY,
 				timestamp: nowDate,
 				userId: request.userId,
 				type: request.workout.type,
