@@ -9,7 +9,8 @@ const PRIMARY_KEY = "static_uuid";
 
 module.exports = (request) => {
 	return new Promise((resolve, reject) =>{
-		var nowDate = dateTime.format(new Date(), 'ddd MMM DD YYYY');
+		var nowDate = new Date(); //dateTime.format(new Date(), 'ddd MMM DD YYYY');
+		nowDate = nowDate.toISOString();
 		var uuid = UUID();
 		var params = {
 			TableName: WORKOUT_TABLE_NAME,
